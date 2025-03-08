@@ -27,6 +27,7 @@ else
     maze = mazeResult.Value;
     MazeHelper.PrintMaze(maze);
 
-    DeepFirstSearch deepFirstSearch = new DeepFirstSearch(maze);
-    deepFirstSearch.ExecuteSearch();
+    DeepFirstSearch deepFirstSearch = new DeepFirstSearch()
+        .SetMaze(maze)
+        .ExecuteSearch();
 }
