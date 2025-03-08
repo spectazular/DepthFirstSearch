@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DepthFirstSearch.PoC.SearchLogic
 {
-    public class DeepFirstSearch
+    public class DeepFirstSearch : IMazeSearch
     {
         private char[,] _maze;
         private (int, int)[] _directions = { (0, 1), (1, 0), (0, -1), (-1, 0) }; // Right, Down, Left, Up
@@ -20,7 +20,7 @@ namespace DepthFirstSearch.PoC.SearchLogic
 
         //public DeepFirstSearch() { }
 
-        public DeepFirstSearch SetMaze(char[,] maze)
+        public IMazeSearch SetMaze(char[,] maze)
         {
             _maze = maze;
             _start = MazeHelper.FindStart(_maze).Value;
@@ -30,7 +30,7 @@ namespace DepthFirstSearch.PoC.SearchLogic
             return this;
         }
 
-        public DeepFirstSearch ExecuteSearch()
+        public IMazeSearch ExecuteSearch()
         {
             Stack<(int, int)> stack = new Stack<(int, int)>();
             HashSet<(int, int)> visited = new HashSet<(int, int)>();
