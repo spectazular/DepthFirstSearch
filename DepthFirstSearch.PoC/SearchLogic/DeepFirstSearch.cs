@@ -10,7 +10,7 @@ namespace DepthFirstSearch.PoC.SearchLogic
     public class DeepFirstSearch : IMazeSearch
     {
         private readonly char[,] _maze;
-        private readonly (int, int)[] _directions = { (0, 1), (1, 0), (0, -1), (-1, 0) }; // Right, Down, Left, Up
+        private readonly (int, int)[] _directions = { (0, 1), (1, 0), (0, -1), (-1, 0) }; // Right, Down, Left, Up TODO: I wonder if randomising direction gives better performance?
 
         private readonly (int, int) _start;
         private readonly (int, int) _finish;
