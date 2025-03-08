@@ -15,7 +15,7 @@ using var log = new LoggerConfiguration()
 Console.WriteLine("Starting Maze app!");
 
 Result<char[,]> mazeResult = new MazeRepository()
-    .SetMazeFilePath(@"MazeStructure\maze1.txt")
+    .SetMazeFilePath(@"MazeStructure\maze2.txt")
     .GetMaze();
 
 if (mazeResult.IsFailed)
@@ -28,6 +28,6 @@ else
     //MazeHelper.PrintMaze(maze);
 
     IMazeSearch deepFirstSearch = new DeepFirstSearch(maze)
-        .SetDelay(1000)
+        .SetDelay(200)
         .ExecuteSearch();
 }
