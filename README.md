@@ -20,10 +20,30 @@ This code base is related to learning maze search algorithms, starting with Dept
 1. Ensure you have .NET 9 installed.
 2. Clone the repository.
 3. Open the solution in Visual Studio 2022.
-4. Update the maze file path in `Program.cs` if necessary.
+4. Update the maze txt file and file path in `Program.cs` if necessary.
 5. Run the project.
 
 ## Example
+
+### Define the maze structure
+The maze1.txt file contains the maze structure represented as a grid of characters. Each character in the file represents a specific element of the maze. 
+The file is read line by line, and each line corresponds to a row in the maze.
+
+#### Characters Used
+- `S`: Start position
+- `F`: Finish position
+- `#`: Wall
+- ` ` (space): Open path
+
+#### Example
+Here is an example of what the maze1.txt file might look like:
+```
+#######
+#   #F#
+# # # #
+#S#   #
+#######
+```
 
 Here is an example of how to use the `MazeRepository` and `DeepFirstSearch` classes:
 
