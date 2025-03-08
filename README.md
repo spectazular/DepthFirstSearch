@@ -1,4 +1,4 @@
-# Deep First Search
+# Deep First Search ![GitHub issues](https://img.shields.io/github/issues/spectazular/DepthFirstSearch)
 
 This code base is related to learning maze search algorithms, starting with Depth First Search (DFS).
 
