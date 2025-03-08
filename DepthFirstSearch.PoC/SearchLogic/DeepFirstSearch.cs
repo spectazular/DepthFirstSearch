@@ -58,27 +58,41 @@ namespace DepthFirstSearch.PoC.SearchLogic
 
                 Console.WriteLine($"Visiting ({x}, {y})");
 
-                if ((x, y) == _finish)
+                if (CheckIfFinish(x, y))
                 {
-                    Console.WriteLine("Exit found!");
                     return this;
                 }
 
-                foreach (var (dx, dy) in _directions)
-                {
-                    int newX = x + dx;
-                    int newY = y + dy;
-
-                    if (IsValid(newX, newY, visited))
-                    {
-                        stack.Push((newX, newY));
-                        visited.Add((newX, newY));
-                    }
-                }
+                ChooseNewDirection(x, y, stack, visited);
             }
 
             Console.WriteLine("No path found.");
             return this;
+        }
+
+        private bool CheckIfFinish(int x, int y)
+        {
+            if ((x, y) == _finish)
+            {
+                Console.WriteLine("Exit found!");
+                return true;
+            }
+            return false;
+        }
+
+        private void ChooseNewDirection(int x, int y, Stack<(int, int)> stack, HashSet<(int, int)> visited)
+        {
+            foreach (var (dx, dy) in _directions)
+            {
+                int newX = x + dx;
+                int newY = y + dy;
+
+                if (IsValid(newX, newY, visited))
+                {
+                    stack.Push((newX, newY));
+                    visited.Add((newX, newY));
+                }
+            }
         }
 
         private bool IsValid(int x, int y, HashSet<(int, int)> visited)
