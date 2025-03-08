@@ -54,8 +54,7 @@ namespace DeepFirstSearch.PoC.Tests
         [TestMethod]
         public void ExecuteSearch_ValidMaze_FindsExit()
         {
-            var result = new DepthFirstSearch.PoC.SearchLogic.DeepFirstSearch()
-                .SetMaze(_validMaze)
+            var result = new DepthFirstSearch.PoC.SearchLogic.DeepFirstSearch(_validMaze)
                 .SetDelay(_delay)
                 .ExecuteSearch();
 
@@ -70,8 +69,7 @@ namespace DeepFirstSearch.PoC.Tests
 
             try
             {
-                var search = new DepthFirstSearch.PoC.SearchLogic.DeepFirstSearch()
-                    .SetMaze(_noStartMaze)
+                var search = new DepthFirstSearch.PoC.SearchLogic.DeepFirstSearch(_noStartMaze)
                     .SetDelay(_delay)
                     .ExecuteSearch();
             }
@@ -91,8 +89,7 @@ namespace DeepFirstSearch.PoC.Tests
 
             try
             {
-                var search = new DepthFirstSearch.PoC.SearchLogic.DeepFirstSearch()
-                    .SetMaze(_noFinishMaze)
+                var search = new DepthFirstSearch.PoC.SearchLogic.DeepFirstSearch(_noFinishMaze)
                     .SetDelay(_delay)
                     .ExecuteSearch();
             }
