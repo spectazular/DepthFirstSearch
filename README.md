@@ -2,6 +2,8 @@
 
 This code base is related to learning maze search algorithms, starting with Depth First Search (DFS).
 
+> :warning: **Warning:** The search (Deep First Search) logic is a work in progress and is not yet complete.
+
 ## Project Structure
 
 - `DepthFirstSearch.PoC/Program.cs`: The main entry point of the application.
