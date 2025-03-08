@@ -4,5 +4,6 @@ namespace DepthFirstSearch.PoC.SearchLogic
     {
         IMazeSearch SetMaze(char[,] maze);
         IMazeSearch ExecuteSearch();
+        IMazeSearch SetDelay(int delay);
     }
 }

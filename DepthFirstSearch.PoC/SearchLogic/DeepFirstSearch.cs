@@ -18,7 +18,7 @@ namespace DepthFirstSearch.PoC.SearchLogic
         private int _rows;
         private int _cols;
 
-        //public DeepFirstSearch() { }
+        private int _delay = 1000;
 
         public IMazeSearch SetMaze(char[,] maze)
         {
@@ -27,6 +27,12 @@ namespace DepthFirstSearch.PoC.SearchLogic
             _finish = MazeHelper.FindFinish(_maze).Value;
             _rows = _maze.GetLength(0);
             _cols = _maze.GetLength(1);
+            return this;
+        }
+
+        public IMazeSearch SetDelay(int delay)
+        {
+            _delay = delay;
             return this;
         }
 
@@ -48,7 +54,7 @@ namespace DepthFirstSearch.PoC.SearchLogic
                 } 
 
                 MazeHelper.PrintMaze(_maze);
-                Thread.Sleep(1000); // Pause for visualization
+                Thread.Sleep(_delay); // Pause for visualization
 
                 Console.WriteLine($"Visiting ({x}, {y})");
 

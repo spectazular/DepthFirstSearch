@@ -25,9 +25,10 @@ if (mazeResult.IsFailed)
 else
 {
     maze = mazeResult.Value;
-    MazeHelper.PrintMaze(maze);
+    //MazeHelper.PrintMaze(maze);
 
     IMazeSearch deepFirstSearch = new DeepFirstSearch()
         .SetMaze(maze)
+        .SetDelay(1000)
         .ExecuteSearch();
 }

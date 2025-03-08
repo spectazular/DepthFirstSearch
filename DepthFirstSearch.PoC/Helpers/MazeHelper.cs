@@ -37,8 +37,6 @@ namespace DepthFirstSearch.PoC.Helpers
 
         public static void PrintMaze(char[,] maze)
         {
-            Console.Clear();
-
             int rows = maze.GetLength(0);
             int cols = maze.GetLength(1);
 
