@@ -106,11 +106,6 @@ namespace DepthFirstSearch.PoC.SearchLogic
 
         private bool IsValid(int x, int y, HashSet<(int, int)> visited)
         {
-            if (_maze[x, y] == 'F') //Is this the finish?
-            {
-                return true;
-            }
-
             if (x < 0 || x >= _rows) //Am I within the height of the maze?
             {
                 return false;
@@ -119,6 +114,11 @@ namespace DepthFirstSearch.PoC.SearchLogic
             if (y < 0 || y >= _cols) //Am I within the width of the maze?
             {
                 return false;
+            }
+
+            if (_maze[x, y] == 'F') //Is this the finish?
+            {
+                return true;
             }
 
             if (_maze[x, y] != ' ') //Is this a wall?
